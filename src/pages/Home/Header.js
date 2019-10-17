@@ -18,8 +18,8 @@ export default class Header extends PureComponent {
           />
         </TouchableItem>
 
-        <View>
-          <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#FFF' }}>TOTAL BALANCE</Text>
+        <View style={styles.titleWrapper}>
+          <Text style={styles.title}>TOTAL BALANCE</Text>
         </View>
 
         <TouchableItem
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 
   wrapper: {
@@ -49,6 +49,18 @@ const styles = StyleSheet.create({
     height: 32,
     width: 32,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
+
+  titleWrapper: {
+    height: 54,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  title: {
+    color: '#FFF',
+    fontSize: 12,
+    fontWeight: 'bold',
+  }
 });
