@@ -9,7 +9,7 @@ const AppNavigator = createStackNavigator(Routes, {
   navigationOptions: {
     headerVisible: false,
   },
-  initialRouteName: 'Login'
+  initialRouteName: 'Initial'
 });
 
 export default createAppContainer(AppNavigator);
