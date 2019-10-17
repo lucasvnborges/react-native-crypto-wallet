@@ -6,7 +6,7 @@ import icons from './icons';
 export default class Loader extends PureComponent {
   render() {
     const { code } = this.props;
-    const getIcon = icons.find(i => i.name === code);
+    const { url } = icons.find(i => i.name === code);
 
     return (
       <View style={styles.container}>
@@ -14,7 +14,7 @@ export default class Loader extends PureComponent {
           code ? (
             <Image
               style={{ height: 42, width: 42 }}
-              source={getIcon.url}
+              source={url}
             />
           ) : (
             <View></View>
