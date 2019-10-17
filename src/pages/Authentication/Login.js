@@ -6,10 +6,26 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Loader from '../../components/Loader';
 
-const isLoading = true;
-
 export default class LoginScreen extends PureComponent {
+
+  state = {
+    isLoading: false
+  }
+
+  submit = () => {
+    this.setState({
+      isLoading: true,
+    }, () => setTimeout(() => {
+      this.setState({
+        isLoading: false
+      })
+
+      this.props.navigation.navigate('Home');
+    }, 3000))
+  }
+
   render() {
+    const { isLoading } = this.state;
 
     if (isLoading) {
       return (
@@ -41,7 +57,7 @@ export default class LoginScreen extends PureComponent {
             textContent="LOGIN"
             primary={true}
             style={{ marginTop: 16 }}
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={this.submit}
           />
         </View>
       </View>
