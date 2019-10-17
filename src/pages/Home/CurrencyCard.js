@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
+import CryptoIcon from '../../components/CryptoIcon';
+
 export default class CurrencyCard extends PureComponent {
   constructor(props) {
     super(props);
@@ -18,26 +20,24 @@ export default class CurrencyCard extends PureComponent {
     )
   }
 
-  render() {    
+  render() {
     const { details } = this.props;
 
     return (
-      <View style={styles.item}>
-        <View style={{ backgroundColor: details.color, width: 24, height: 24 }}>
-          <Text>
-            {details.color[0]}
-          </Text>
+      <View style={styles.container}>
+        <View style={styles.icon}>
+          <CryptoIcon code={details.code} />
         </View>
 
-        <View>
-          <Text style={styles.title}>{details.color}</Text>
-          <Text style={styles.title}>{details.currencyBalance}</Text>
+        <View style={styles.info}>
+          <Text style={styles.currName}>{details.name}</Text>
+          <Text style={styles.currBalance}>{details.currencyBalance}</Text>
         </View>
 
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Text style={styles.title}>{details.variation}</Text>
           {
-            this.renderVariationIcon(details.variation.replace(/[^\d.-]/g, '')) 
+            this.renderVariationIcon(details.variation.replace(/[^\d.-]/g, ''))
           }
         </View>
       </View>
@@ -46,16 +46,42 @@ export default class CurrencyCard extends PureComponent {
 }
 
 const styles = StyleSheet.create({
-  item: {
+  container: {
     backgroundColor: '#FFF',
     borderRadius: 8,
     marginVertical: 8,
     marginHorizontal: 24,
-    padding: 28,
+    padding: 24,
 
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+
+  icon: {
+    width: 42,
+    height: 42,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  info: {
+    flex: 1,
+    paddingHorizontal: 16
+  },
+
+  currName: {
+    color: '#444',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textTransform: 'capitalize'
+  },
+
+  currBalance: {
+    color: '#888',
+    fontSize: 12,
+    textTransform: 'uppercase',
+    marginVertical: 4
   },
 
   title: {
