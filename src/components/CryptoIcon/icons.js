@@ -32,6 +32,6 @@ export default [
   {
     name: 'LTC',
     fullName: 'Litecoin',
-    url: require('../../../assets/crypto_icons/bnb.png'),
+    url: require('../../../assets/crypto_icons/ltc.png'),
   }
 ]
