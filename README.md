@@ -1,7 +1,6 @@
 ## Crypto Wallet
 This app is for the practice of React and React Native technology only.
-
-
+<br /><br />
 
 ## Getting Started
 
@@ -15,14 +14,14 @@ This app is for the practice of React and React Native technology only.
     npm start   # to start the expo project
     ```
 
-
+<br /><br />
 ## Screenshots
 
 <table>
   <tr>
     <td><img src="./screenshots/1_Screenshot_20191016-232259_Expo.jpg" height = "480" width="270"></td>
     <td><img src="./screenshots/2_Screenshot_20191016-232254_Expo.jpg" height = "480" width="270"></td>
-    <td><img src="./screenshots/3_Screenshot_20191016-232217_Expo" height = "480" width="270"></td>
+    <td><img src="./screenshots/3_Screenshot_20191016-232217_Expo.jpg" height = "480" width="270"></td>
   </tr>
 </table>
 
